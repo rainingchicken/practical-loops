@@ -8,3 +8,14 @@
 // If a number is not divisible by either 3 or 5, log the number.
 // Remember to commit your solution once it is working.
 
+for (let num = 1; num <= 100; num++) {
+  if (num % 3 == 0 && num % 5 == 0) {
+    console.log("Fizz Buzz");
+  } else if (num % 5 == 0) {
+    console.log("Buzz");
+  } else if (num % 3 == 0) {
+    console.log("Frizz");
+  } else {
+    console.log(num);
+  }
+}
