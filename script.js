@@ -22,7 +22,7 @@ function fizzBuzz() {
   }
 }
 
-fizzBuzz();
+//fizzBuzz();
 
 // Part 2: Prime Time
 // Now we will move onto something slightly more complex.
@@ -59,3 +59,31 @@ function findNextPrime(n) {
 //   console.log(findNextPrime(index));
 // }
 //looks correct
+
+// Part 3: Feeling Loopy
+// Context: A CSV file, or “Comma-Separated Values” file is traditionally used to store tabular data. You may be familiar with CSVs through past use of programs such as Microsoft Excel or Google Sheets. While each of these programs save their data in different formats to preserve style (e.g., font color or cell backgrounds), at their core, they are storing CSV data.
+
+let CSVdata =
+  "ID,Name,Occupation,Age\n42,Bruce,Knight,41\n57,Bob,Fry Cook,19\n63,Blaine,Quiz Master,58\n98,Bill,Doctor’s Assistant,26";
+let CSVarray = [];
+let element = [];
+let groupedElements = [];
+let temp = "";
+//separate by ',' into array
+for (let index = 0; index < CSVdata.length; index++) {
+  temp += CSVdata[index];
+  if (
+    CSVdata[index] == "," ||
+    CSVdata[index] == "\r" ||
+    CSVdata[index] == "\n"
+  ) {
+    element.push(temp);
+    temp = "";
+  }
+  if (CSVdata[index] == "\r" || CSVdata[index] == "\n") {
+    CSVarray.push(element);
+    element = [];
+  }
+}
+
+console.log(CSVarray);
